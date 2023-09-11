@@ -14,7 +14,7 @@
       flex-direction: column;
       align-items: flex-start;
       row-gap: toRem(10);
-      margin-top: toRem(30);
+      margin-top: toRem(25);
     }
 
     @media (min-width: $mobile) {
@@ -62,7 +62,10 @@
     border-radius: toRem(20);
     background: #fff;
 
-    padding: toRem(15) toRem(30);
+    padding-right: toRem(30);
+    padding-left: toRem(30);
+    @include adaptiveValue("padding-top", 15, 10);
+    @include adaptiveValue("padding-bottom", 15, 10);
 
     @media (max-width: em(1600)) {
       flex-wrap: wrap;
@@ -73,7 +76,9 @@
     }
 
     @media (max-width: $pc) {
-      padding: toRem(15) toRem(26);
+      padding-right: toRem(26);
+      padding-left: toRem(26);
+      min-height: toRem(66);
     }
 
     @media (max-width: $mobile) {
@@ -136,7 +141,7 @@
       margin-left: toRem(26);
     }
     @media (max-width: $mobile) {
-      margin-top: toRem(20);
+      margin-top: toRem(15);
     }
   }
 
@@ -215,6 +220,10 @@
     position: absolute;
     top: toRem(31);
     right: toRem(31);
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
   }
 }
 
@@ -421,7 +430,7 @@
       right: 0;
       position: absolute;
       width: 100%;
-      height: toRem(3.7);
+      height: toRem(4);
       background-color: #353434;
       border-radius: toRem(2);
     }
@@ -435,7 +444,7 @@
       width: toRem(13);
     }
     span {
-      top: calc(50% - toRem(1));
+      top: calc(50% - toRem(2));
     }
     // .menu-open & {
     //   span {
