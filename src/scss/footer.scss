@@ -1,3 +1,126 @@
 //====================================================================================================
+.footer {
+  &__inner {
+    max-width: em(1900);
+    margin: 0 auto;
+    border-radius: 20px;
+    background: #fff;
+    @media (min-width: $mobile) {
+      padding: 0 toRem(10);
+    }
+
+    @include adaptiveValue("margin-right", 10, 20, 0, 1900, 375);
+    @include adaptiveValue("margin-left", 10, 20, 0, 1900, 375);
+    @include adaptiveValue("margin-bottom", 10, 20, 0, 1900, 375);
+  }
+
+  &__container {
+    display: grid;
+    gap: toRem(25);
+
+    @include adaptiveValue("padding-top", 25, 30);
+    @include adaptiveValue("padding-bottom", 40, 25);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(25);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(19);
+    color: #000;
+    @include adaptiveValue("font-size", 20, 18);
+    font-weight: 700;
+    line-height: 130%; /* 26/20 */
+    transition: all 0.3s ease 0s;
+
+    img {
+      max-width: toRem(31);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(20);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: toRem(11);
+    }
+  }
+
+  &__item {
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 600;
+    line-height: 131.3%; /* 21/16 */
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff1717;
+      }
+    }
+  }
+
+  &__copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(35);
+
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+      row-gap: toRem(30);
+      text-align: center;
+      padding: 0 toRem(30);
+    }
+  }
+
+  &__text {
+    max-width: toRem(869);
+    color: #c1c1c1;
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 500;
+    line-height: 131.3%; /* 21/16 */
+
+    a {
+      text-decoration: underline;
+      transition: all 0.3s ease 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: #ff1717;
+        }
+      }
+    }
+  }
+
+  &__social {
+  }
+}
+.social {
+  &__item {
+  }
+
+  &__link {
+  }
+}
 
 //====================================================================================================
