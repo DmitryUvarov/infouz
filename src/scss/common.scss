@@ -1,1 +1,73 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.title {
+  font-weight: 700;
+  @include adaptiveValue("font-size", 24, 19);
+  line-height: 129.2%; /* 31/24 */
+}
+
+//====================================================================================================
+
+.date {
+  &::before {
+    content: "\e902";
+    @extend %ic;
+  }
+}
+
+.view {
+  &::before {
+    content: "\e909";
+    @extend %ic;
+  }
+}
+
+//====================================================================================================
+
+.top-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__title {
+  }
+  &__link {
+    color: #ff1717;
+    font-family: Futura PT;
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 700;
+    line-height: 130.8%; /* 17/13 */
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    @include adaptiveValue("column-gap", 11, 20);
+    border-radius: 8px;
+    background: rgba(255, 23, 23, 0.05);
+    @include adaptiveValue("height", 35, 30);
+    padding: toRem(0) toRem(13);
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+        background: rgba(255, 23, 23, 1);
+      }
+    }
+
+    &::before {
+      font-size: toRem(10);
+    }
+  }
+}
+
+//====================================================================================================
+
+.banner-ibg {
+  padding-bottom: percent(316, 286);
+  border-radius: toRem(20);
+  overflow: hidden;
+
+  @media (max-width: em(1120)) {
+    padding-bottom: percent(115, 335);
+  }
+}

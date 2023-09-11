@@ -1,3 +1,341 @@
 //====================================================================================================
+.section {
+  @include adaptiveValue("padding-top", 30, 15);
+  @include adaptiveValue("padding-bottom", 15, 10);
+  &__container {
+  }
+
+  &__top {
+    @include adaptiveValue("margin-bottom", 20, 18);
+  }
+
+  &__body {
+    gap: toRem(14);
+
+    @media (min-width: em(1120)) {
+      display: grid;
+      grid-template-columns: 1fr toRem(286);
+    }
+    @media (max-width: em(1120)) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    @media (max-width: $mobile) {
+      gap: toRem(10);
+    }
+
+    &_reverse {
+      @media (min-width: em(1120)) {
+        display: grid;
+        grid-template-columns: toRem(286) 1fr;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(14);
+
+    @media (min-width: $mobile) and (max-width: em(1120)) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobile) {
+      gap: toRem(10);
+    }
+  }
+
+  &__item {
+  }
+
+  &__aside {
+  }
+}
+
+.news-items {
+  display: grid;
+
+  @media (min-width: $mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(toRem(256), 1fr));
+  }
+}
+
+.big-items {
+  display: grid;
+
+  @media (min-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  &_right {
+    .item-cart_big {
+      grid-column: 2/3;
+      grid-row: 1/4;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.item-cart {
+  border-radius: toRem(20);
+  background: #fff;
+  display: flex;
+  column-gap: toRem(20);
+
+  @include adaptiveValue("padding-top", 16, 13);
+  @include adaptiveValue("padding-bottom", 16, 13);
+  @include adaptiveValue("padding-right", 20, 11);
+  @include adaptiveValue("padding-left", 20, 11);
+
+  @media (min-width: $tablet) {
+    flex: 0 0 calc(50% - toRem(7));
+  }
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
+
+  &_small {
+    @media (min-width: $tablet) {
+      flex: 0 0 calc(33.333% - toRem(9.333));
+    }
+
+    .item-cart__image-ibg {
+      @media (min-width: em(1120)) {
+        display: none;
+      }
+    }
+  }
+
+  &_mid {
+    @media (min-width: $mobile) {
+      flex-direction: column;
+      row-gap: toRem(10);
+
+      .item-cart__image-ibg {
+        padding-bottom: percent(153, 256);
+        flex: 1 1 auto;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &_big {
+    @media (min-width: $mobile) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+      flex-direction: column;
+      row-gap: toRem(15);
+      height: fit-content;
+
+      .item-cart__image-ibg {
+        padding-bottom: percent(293, 546);
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &__image-ibg {
+    flex: 0 0 toRem(118);
+    width: toRem(118);
+    height: toRem(118);
+    border-radius: toRem(10);
+    overflow: hidden;
+
+    @media (min-width: em(1120)) {
+      //   padding-bottom: percent(118, 393);
+    }
+    @media (max-width: $mobile) {
+      flex-basis: toRem(88);
+      width: toRem(88);
+      height: toRem(88);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 700;
+    line-height: 19px; /* 105.556% */
+    transition: all 0.3s ease 0s;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 15);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff1717;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__inner-item {
+    @include adaptiveValue("font-size", 16, 12);
+    display: flex;
+    column-gap: toRem(8);
+    color: #c1c1c1;
+    font-weight: 500;
+
+    &::before {
+      @include adaptiveValue("font-size", 15, 10);
+    }
+  }
+}
+
+.aside-section {
+  display: flex;
+  gap: toRem(14);
+
+  @media (max-width: $mobile) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(10);
+  }
+
+  @media (max-width: em(1120)) {
+    flex-direction: row;
+  }
+  @media (min-width: em(1120)) {
+    flex-direction: column;
+  }
+
+  &_banner {
+    @media (max-width: em(1120)) {
+      order: -1;
+      grid-template-columns: 1fr;
+    }
+  }
+  &_banner_left {
+    order: -1;
+  }
+
+  &_banner_big {
+    @include adaptiveValue("margin-top", 37, 14);
+    .banner-ibg {
+      padding-bottom: percent(115, 335);
+    }
+  }
+
+  &__block {
+    border-radius: toRem(20);
+    background: #fff;
+
+    @include adaptiveValue("padding-top", 16, 13);
+    @include adaptiveValue("padding-bottom", 16, 13);
+    @include adaptiveValue("padding-right", 25, 11);
+    @include adaptiveValue("padding-left", 25, 11);
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 700;
+    line-height: 105.556%; /* 105.556% */
+    @include adaptiveValue("margin-bottom", 15, 10);
+
+    span {
+      color: #ff1717;
+    }
+  }
+
+  &__banner {
+    @media (max-width: em(1120)) {
+      width: 100%;
+    }
+  }
+}
+.weather {
+  &__title {
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap", 15, 9);
+  }
+
+  &__ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include adaptiveValue("max-width", 83, 58);
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    font-size: toRem(25);
+    font-weight: 700;
+    line-height: 124%; /* 31/25 */
+  }
+}
+.exchange-rate {
+  @include adaptiveValue("font-size", 16, 13);
+  font-weight: 700;
+  line-height: 131.3%; /* 21/16 */
+  &__title {
+  }
+
+  &__items {
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: toRem(10);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+
+    @media (max-width: $mobile) {
+      align-items: flex-end;
+    }
+  }
+
+  &__name {
+    color: #c1c1c1;
+    font-weight: 500;
+  }
+
+  &__numbers {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(15);
+
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+  }
+
+  &__price {
+  }
+
+  &__percent {
+    @include adaptiveValue("font-size", 16, 9);
+    color: #18a101;
+    line-height: 120%;
+  }
+}
 
 //====================================================================================================
