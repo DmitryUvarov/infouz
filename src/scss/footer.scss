@@ -113,6 +113,11 @@
   }
 
   &__social {
+    .social__link {
+      @media (max-width: $mobile) {
+        font-size: toRem(25);
+      }
+    }
   }
 }
 .social {
