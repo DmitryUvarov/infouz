@@ -28,23 +28,35 @@
   content: "\e903";
 }
 ._icon-facebook:before {
-  content: "\e904";
-}
-._icon-instagram:before {
   content: "\e905";
 }
-._icon-language:before {
-  content: "\e906";
-}
-._icon-search:before {
+._icon-instagram:before {
   content: "\e907";
 }
-._icon-telegram:before {
+._icon-language:before {
   content: "\e908";
 }
+._icon-search:before {
+  content: "\e90a";
+}
+._icon-telegram:before {
+  content: "\e90d";
+}
 ._icon-watch:before {
-  content: "\e909";
+  content: "\e90e";
 }
 ._icon-share:before {
-  content: "\e90a";
+  content: "\e90b";
+}
+._icon-home-page:before {
+  content: "\e906";
+}
+._icon-culture-page:before {
+  content: "\e904";
+}
+._icon-news-page:before {
+  content: "\e909";
+}
+._icon-sport-page:before {
+  content: "\e90c";
 }
