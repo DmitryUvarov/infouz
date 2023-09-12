@@ -51,6 +51,10 @@
 
   &__aside {
   }
+
+  &__pagination {
+    @include adaptiveValue("margin-top", 54, 30);
+  }
 }
 
 .news-items {

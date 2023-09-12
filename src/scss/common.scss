@@ -71,3 +71,39 @@
     padding-bottom: percent(115, 335);
   }
 }
+
+//========================================================================================================================================================
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(4);
+
+  &__item {
+    @include adaptiveValue("width", 27, 24);
+    @include adaptiveValue("height", 27, 24);
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0s ease 0s;
+
+    color: #c1c1c1;
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 600;
+    line-height: 131.3%; /* 21/16 */
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff1717;
+        background-color: rgba(255, 23, 23, 0.06);
+      }
+    }
+    &.active {
+      color: #ff1717;
+      background-color: rgba(255, 23, 23, 0.06);
+    }
+  }
+}
