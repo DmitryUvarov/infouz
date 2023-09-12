@@ -9,8 +9,15 @@
       padding: 0 toRem(10);
     }
 
-    @include adaptiveValue("margin-right", 10, 20, 0, 1900, 375);
-    @include adaptiveValue("margin-left", 10, 20, 0, 1900, 375);
+    @media (min-width: em(1930)) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @media (max-width: em(1930)) {
+      @include adaptiveValue("margin-right", 10, 20, 0, 1930, 375);
+      @include adaptiveValue("margin-left", 10, 20, 0, 1930, 375);
+    }
+
     @include adaptiveValue("margin-bottom", 10, 20, 0, 1900, 375);
     @include adaptiveValue("margin-top", 80, 40, 0, 1900, 375);
   }
