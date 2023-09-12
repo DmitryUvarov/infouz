@@ -1,0 +1,236 @@
+.news {
+  @include adaptiveValue("padding-top", 25, 15);
+  @include adaptiveValue("padding-bottom", 20, 15);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    gap: toRem(20);
+
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__aside {
+    flex: 0 0 toRem(280);
+    border-radius: toRem(20);
+    background: #fff;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+}
+.aside-news {
+  position: sticky;
+  top: toRem(20);
+  height: fit-content;
+  &__title {
+    color: #353434;
+    font-size: toRem(20);
+    font-weight: 700;
+    line-height: 100%;
+
+    margin-bottom: toRem(10);
+    padding-right: toRem(20);
+    padding-left: toRem(20);
+    padding-top: toRem(20);
+  }
+
+  &__items {
+  }
+
+  &__item {
+    padding-right: toRem(20);
+    padding-left: toRem(20);
+    @include adaptiveValue("padding-top", 16, 12);
+    @include adaptiveValue("padding-bottom", 20, 16);
+
+    &:not(:last-child) {
+      border-bottom: toRem(1) solid rgba(193, 193, 193, 0.28);
+    }
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(8);
+    color: #c1c1c1;
+    @include adaptiveValue("font-size", 15, 12);
+    font-weight: 500;
+    line-height: 126.7%; /* 19/15 */
+    margin-bottom: toRem(5);
+  }
+
+  &__item-title {
+    color: #353434;
+    @include adaptiveValue("font-size", 17, 14);
+    font-weight: 700;
+    line-height: 111%; /* 111.765% */
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff1717;
+      }
+    }
+  }
+}
+
+.content-news {
+  &__body {
+    border-radius: toRem(20);
+    background: #fff;
+
+    padding-bottom: toRem(35);
+    @include adaptiveValue("padding-top", 25, 20);
+    @include adaptiveValue("padding-left", 35, 20);
+    @include adaptiveValue("padding-right", 35, 20);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(20);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+    color: #c1c1c1;
+    @include adaptiveValue("font-size", 16, 12);
+    font-weight: 500;
+    line-height: 131.3%; /* 21/16 */
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(8);
+  }
+
+  &__share {
+    color: #353434;
+    @include adaptiveValue("font-size", 22, 17);
+    margin-left: auto;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff1717;
+      }
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 25, 16);
+    font-weight: 700;
+    line-height: 120%;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 15, 6);
+    }
+  }
+
+  &__subtitle {
+    color: #777;
+    @include adaptiveValue("font-size", 16, 14);
+    font-weight: 500;
+    line-height: 131.3%; /* 21/16 */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 34, 15);
+    }
+  }
+
+  &__image-ibg {
+    overflow: hidden;
+    border-radius: toRem(10);
+    padding-bottom: percent(263, 807);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 34, 20);
+    }
+
+    @media (max-width: $mobile) {
+      padding-bottom: percent(183, 304);
+    }
+  }
+
+  &__text {
+    color: #777;
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 500;
+    line-height: 131.3%; /* 21/16 */
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
+    a {
+      text-decoration: underline;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: #ff1717;
+        }
+      }
+    }
+  }
+
+  &__telegram {
+  }
+}
+
+.telegram-block {
+  margin-top: toRem(20);
+  border-radius: 20px;
+  background: #1c72a3;
+
+  @include adaptiveValue("padding-top", 33, 20);
+  @include adaptiveValue("padding-bottom", 33, 20);
+  @include adaptiveValue("padding-left", 35, 20);
+  @include adaptiveValue("padding-right", 35, 20);
+
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("column-gap", 35, 14);
+  color: #fff;
+
+  &::before {
+    @include adaptiveValue("font-size", 38, 24);
+  }
+  &__text {
+    @include adaptiveValue("font-size", 25, 14);
+    font-weight: 700;
+    line-height: 100%;
+    max-width: toRem(373);
+  }
+
+  &__link {
+    color: #1c72a3;
+    @include adaptiveValue("font-size", 16, 13);
+    font-weight: 700;
+    line-height: 131.3%; /* 21/16 */
+    border-radius: toRem(10);
+    background: #fff;
+    @include adaptiveValue("height", 48, 32);
+    // min-width: toRem(158);
+    @include adaptiveValue("padding-left", 30, 13);
+    @include adaptiveValue("padding-right", 30, 13);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: rgba(255, 255, 255, 0.4) 0px 7px 29px 0px;
+      }
+    }
+  }
+}
