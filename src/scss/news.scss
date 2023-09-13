@@ -124,7 +124,7 @@
   }
 
   &__title {
-    @include adaptiveValue("font-size", 25, 16);
+    @include adaptiveValue("font-size", 25, 22);
     font-weight: 700;
     line-height: 120%;
 
@@ -160,7 +160,7 @@
 
   &__text {
     color: #777;
-    @include adaptiveValue("font-size", 16, 13);
+    @include adaptiveValue("font-size", 16, 18);
     font-weight: 500;
     line-height: 131.3%; /* 21/16 */
 

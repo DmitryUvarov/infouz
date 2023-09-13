@@ -67,11 +67,11 @@
     @include adaptiveValue("padding-top", 15, 10);
     @include adaptiveValue("padding-bottom", 15, 10);
 
-    @media (max-width: em(1600)) {
+    @media (max-width: em(1830)) {
       flex-wrap: wrap;
     }
 
-    @media (min-width: em(1600)) {
+    @media (min-width: em(1830)) {
       min-height: toRem(86);
     }
 
@@ -89,7 +89,7 @@
 
   &__logo {
     margin-right: toRem(84);
-    @include adaptiveValue("margin-right", 84, 20, 0, 1930, 1600);
+    @include adaptiveValue("margin-right", 84, 20, 0, 1930, 1830);
 
     white-space: nowrap;
     display: flex;
@@ -111,8 +111,8 @@
   &__menu {
     margin-left: auto;
 
-    @media (max-width: em(1600)) and (min-width: $mobile) {
-      flex: 1 1 auto;
+    @media (max-width: em(1830)) and (min-width: $mobile) {
+      flex: 1 1 100%;
       order: 1;
     }
   }
@@ -120,7 +120,7 @@
   &__form {
     margin-left: toRem(31);
 
-    @media (max-width: em(1600)) {
+    @media (max-width: em(1830)) {
       margin-left: auto;
     }
 
